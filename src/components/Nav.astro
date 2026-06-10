@@ -1,0 +1,172 @@
+---
+---
+<nav id="nav" aria-label="Navegación principal">
+  <a href="#inicio" class="nav-logo" aria-label="Kairós – Inicio">
+    <span class="k-main">Kairós</span>
+    <span class="k-sub">Momento de Gracia</span>
+  </a>
+
+  <ul class="nav-links" id="nav-menu" role="list">
+    <li><a href="#adoracion">El grupo</a></li>
+    <li><a href="#conciertos">Conciertos</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#vocacion">Vocación</a></li>
+    <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+  </ul>
+
+  <button class="nav-burger" id="nav-burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Overlay móvil -->
+<div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+
+<style>
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 3rem;
+  background: rgba(14,12,8,0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--bg-gold);
+  transition: padding 0.3s, background 0.3s;
+}
+nav.scrolled {
+  padding: 0.75rem 3rem;
+  background: rgba(14,12,8,0.99);
+}
+
+.nav-logo { text-decoration: none; }
+.k-main {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.15rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--flame);
+}
+.k-sub {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.72rem; font-weight: 300; font-style: italic;
+  color: rgba(212,168,71,0.6);
+}
+
+.nav-links {
+  display: flex; gap: 2.5rem; list-style: none;
+}
+.nav-links a {
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(245,237,216,0.5); text-decoration: none;
+  transition: color 0.2s; position: relative; padding-bottom: 2px;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 1px; background: var(--gold);
+  transform: scaleX(0); transform-origin: right; transition: transform 0.25s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold); }
+.nav-links a:hover::after,
+.nav-links a.active::after { transform: scaleX(1); transform-origin: left; }
+
+.nav-cta {
+  font-size: 0.7rem !important; font-weight: 500 !important;
+  color: var(--deep) !important; background: var(--flame) !important;
+  padding: 0.5rem 1.4rem; border-radius: 2px; transition: background 0.2s;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--gold2) !important; color: var(--deep) !important; }
+
+/* Burger */
+.nav-burger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-burger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--cream); border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-overlay {
+  position: fixed; inset: 0; z-index: 190;
+  background: rgba(0,0,0,0.6);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.nav-overlay.open { opacity: 1; pointer-events: all; }
+
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  nav.scrolled { padding: 0.75rem 1.5rem; }
+  .nav-burger { display: flex; }
+  .nav-links {
+    position: fixed; top: 0; right: 0; bottom: 0;
+    width: min(320px, 80vw);
+    flex-direction: column; gap: 0;
+    background: var(--deep2);
+    border-left: 1px solid var(--bg-gold);
+    padding: 5rem 2rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    z-index: 200;
+  }
+  .nav-links.open { transform: translateX(0); }
+  .nav-links li { border-bottom: 1px solid rgba(212,168,71,0.08); }
+  .nav-links a {
+    display: block; padding: 1rem 0;
+    font-size: 0.85rem;
+  }
+  .nav-cta {
+    display: inline-block !important;
+    margin-top: 1rem;
+  }
+}
+</style>
+
+<script>
+const nav = document.getElementById('nav')!;
+const burger = document.getElementById('nav-burger')!;
+const menu = document.getElementById('nav-menu')!;
+const overlay = document.getElementById('nav-overlay')!;
+
+function toggleMenu(open: boolean) {
+  burger.setAttribute('aria-expanded', String(open));
+  menu.classList.toggle('open', open);
+  overlay.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
+burger.addEventListener('click', () => {
+  toggleMenu(burger.getAttribute('aria-expanded') !== 'true');
+});
+overlay.addEventListener('click', () => toggleMenu(false));
+menu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => toggleMenu(false));
+});
+
+// Scroll shrink
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Active link highlighting
+const sections = document.querySelectorAll<HTMLElement>('section[id]');
+const links = document.querySelectorAll<HTMLAnchorElement>('.nav-links a:not(.nav-cta)');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      links.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+
+sections.forEach(s => observer.observe(s));
+</script>

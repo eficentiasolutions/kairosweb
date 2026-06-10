@@ -1,0 +1,169 @@
+---
+---
+<section id="vocacion" class="section-vocacion" aria-labelledby="vocacion-title">
+  <div class="container">
+    <div class="container-narrow reveal">
+      <div class="s-label">Nuestra vocación</div>
+      <h2 class="s-title" id="vocacion-title">Arte al <em>servicio de Dios</em></h2>
+      <p class="voc-intro">Todo lo que hacemos nace de la adoración. La música, la pintura y el encuentro son el lenguaje con que anunciamos el Evangelio.</p>
+    </div>
+
+    <div class="voc-grid reveal delay-1">
+      <article class="voc-card">
+        <div class="voc-visual musica" aria-hidden="true">
+          <svg class="voc-visual-icon" viewBox="0 0 60 70" fill="none">
+            <path d="M22 52 L22 18 L46 12 L46 46" stroke="rgba(212,168,71,0.6)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M22 18 L46 12" stroke="rgba(212,168,71,0.5)" stroke-width="2"/>
+            <ellipse cx="18" cy="54" rx="8" ry="5" transform="rotate(-15 18 54)" fill="rgba(232,136,42,0.5)"/>
+            <ellipse cx="42" cy="48" rx="8" ry="5" transform="rotate(-15 42 48)" fill="rgba(232,136,42,0.5)"/>
+          </svg>
+        </div>
+        <div class="voc-body">
+          <h3>Música</h3>
+          <p>Cantos de adoración, alabanza litúrgica y música contemporánea cristiana. Repertorio propio y versiones del cancionero de la Iglesia.</p>
+        </div>
+      </article>
+
+      <article class="voc-card">
+        <div class="voc-visual pintura" aria-hidden="true">
+          <svg class="voc-visual-icon" viewBox="0 0 60 60" fill="none">
+            <circle cx="30" cy="30" r="22" stroke="rgba(212,168,71,0.5)" stroke-width="2" fill="none"/>
+            <circle cx="30" cy="30" r="6" fill="rgba(240,201,106,0.4)"/>
+            <rect x="28" y="4" width="4" height="14" rx="2" fill="rgba(212,168,71,0.4)"/>
+            <rect x="28" y="42" width="4" height="14" rx="2" fill="rgba(212,168,71,0.4)"/>
+            <rect x="4" y="28" width="14" height="4" rx="2" fill="rgba(212,168,71,0.4)"/>
+            <rect x="42" y="28" width="14" height="4" rx="2" fill="rgba(212,168,71,0.4)"/>
+          </svg>
+        </div>
+        <div class="voc-body">
+          <h3>Pintura</h3>
+          <p>La dimensión visual es también parte de nuestra vocación. El arte sacro y la imagen al servicio del anuncio del Evangelio.</p>
+        </div>
+      </article>
+
+      <article class="voc-card">
+        <div class="voc-visual adoracion" aria-hidden="true">
+          <svg class="voc-visual-icon" viewBox="0 0 70 60" fill="none">
+            <path d="M35 50 C20 40 8 28 12 18 C16 8 28 10 35 20 C42 10 54 8 58 18 C62 28 50 40 35 50Z" fill="rgba(240,201,106,0.25)" stroke="rgba(212,168,71,0.5)" stroke-width="1.5"/>
+            <ellipse cx="35" cy="32" rx="5" ry="4" fill="rgba(240,201,106,0.4)"/>
+            <path d="M35 20 L35 8 L28 14 L35 8 L42 14" stroke="rgba(212,168,71,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="35" cy="38" r="3" fill="rgba(232,136,42,0.5)"/>
+          </svg>
+        </div>
+        <div class="voc-body">
+          <h3>Adoración</h3>
+          <p>El corazón de Kairós es la adoración eucarística. Todo lo que hacemos nace de estar en presencia de Dios.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Cita central -->
+    <blockquote class="voc-quote reveal delay-2">
+      <p>"El arte es una de las más elevadas expresiones del espíritu humano<br>cuando está ordenado a la gloria de Dios."</p>
+      <cite>— Diócesis de Orihuela-Alicante</cite>
+    </blockquote>
+  </div>
+</section>
+
+<style>
+.section-vocacion {
+  padding: 7rem 2rem;
+  background: var(--deep3);
+  border-bottom: 1px solid var(--bg-gold);
+}
+.container { max-width: 1120px; margin: 0 auto; }
+.container-narrow { max-width: 740px; }
+
+.s-label {
+  font-size: 0.63rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--flame); margin-bottom: 0.9rem;
+  display: flex; align-items: center; gap: 0.7rem;
+}
+.s-label::after { content: ''; display: block; width: 32px; height: 1px; background: var(--flame); opacity: 0.4; }
+.s-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; line-height: 1.1;
+  color: var(--cream); margin-bottom: 1rem;
+}
+.s-title em { font-style: italic; color: var(--gold2); font-weight: 400; }
+.voc-intro {
+  font-family: var(--font-serif); font-size: 1.05rem; font-weight: 300; font-style: italic;
+  color: rgba(245,237,216,0.55); line-height: 1.8; margin-bottom: 0;
+}
+
+.voc-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--bg-gold); border-radius: 4px; overflow: hidden;
+  margin-top: 3rem;
+}
+.voc-card {
+  background: rgba(255,255,255,0.02);
+  border-right: 1px solid var(--bg-gold); transition: background 0.25s;
+  overflow: hidden;
+}
+.voc-card:last-child { border-right: none; }
+.voc-card:hover { background: rgba(232,136,42,0.04); }
+
+.voc-visual {
+  height: 160px; position: relative; overflow: hidden;
+}
+.voc-visual.musica {
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(232,136,42,0.25) 0%, transparent 60%),
+    linear-gradient(180deg, #12100c 0%, #1e1810 100%);
+}
+.voc-visual.pintura {
+  background:
+    radial-gradient(ellipse 50% 60% at 30% 50%, rgba(212,168,71,0.2) 0%, transparent 60%),
+    linear-gradient(135deg, #100e0a 0%, #1c1810 50%, #141008 100%);
+}
+.voc-visual.adoracion {
+  background:
+    radial-gradient(ellipse 40% 50% at 50% 60%, rgba(240,201,106,0.3) 0%, transparent 55%),
+    radial-gradient(ellipse 20% 30% at 50% 70%, rgba(232,136,42,0.4) 0%, transparent 40%),
+    linear-gradient(180deg, #0e0c08 0%, #1a1508 100%);
+}
+.voc-visual-icon {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 60px; height: 70px;
+  opacity: 0.22; transition: opacity 0.3s, transform 0.3s;
+}
+.voc-card:hover .voc-visual-icon { opacity: 0.42; transform: translate(-50%, -54%); }
+
+.voc-body { padding: 1.8rem 2rem; }
+.voc-body h3 {
+  font-family: var(--font-display); font-size: 1.25rem; font-weight: 700;
+  color: var(--cream); margin-bottom: 0.6rem;
+}
+.voc-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+
+/* Cita */
+.voc-quote {
+  margin-top: 4rem; text-align: center;
+  border: none; padding: 2.5rem;
+  border-top: 1px solid rgba(212,168,71,0.12);
+  border-bottom: 1px solid rgba(212,168,71,0.12);
+}
+.voc-quote p {
+  font-family: var(--font-serif); font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 300; font-style: italic; line-height: 1.8;
+  color: rgba(245,237,216,0.45); margin-bottom: 1rem;
+}
+.voc-quote cite {
+  font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(212,168,71,0.35);
+}
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+
+@media (max-width: 900px) {
+  .section-vocacion { padding: 4.5rem 1.5rem; }
+  .voc-grid { grid-template-columns: 1fr; }
+  .voc-card { border-right: none; border-bottom: 1px solid var(--bg-gold); }
+  .voc-card:last-child { border-bottom: none; }
+}
+</style>

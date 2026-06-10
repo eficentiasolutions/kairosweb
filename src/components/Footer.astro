@@ -1,0 +1,117 @@
+---
+const year = new Date().getFullYear();
+---
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="fb-name" aria-label="Kairós">Kairós</div>
+        <div class="fb-sub">Momento de Gracia</div>
+        <div class="fb-dioc">Diócesis de Orihuela · Alicante · Vicaría de Evangelización</div>
+        <a href="mailto:kairosmomentodegracia@gmail.com" class="fb-email">
+          kairosmomentodegracia@gmail.com
+        </a>
+      </div>
+
+      <nav class="footer-nav" aria-label="Navegación secundaria">
+        <div class="footer-nav-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#adoracion">El grupo</a></li>
+            <li><a href="#conciertos">Conciertos</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#vocacion">Vocación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Redes y enlaces</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/kairosmomentodegracia/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.diocesisoa.org" target="_blank" rel="noopener">Diócesis OA</a></li>
+            <li><a href="mailto:kairosmomentodegracia@gmail.com">Email</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/kairosmomentodegracia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kairós">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@kairosmomentodegracia" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Kairós">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {year} Kairós Momento de Gracia · Todos los derechos reservados</p>
+      <p>Diócesis de Orihuela-Alicante</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+footer {
+  background: #080603;
+  padding: 4.5rem 2rem 2rem;
+  border-top: 1px solid var(--bg-gold);
+}
+.container { max-width: 1120px; margin: 0 auto; }
+
+.footer-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 3rem; flex-wrap: wrap; gap: 2.5rem;
+}
+
+.fb-name {
+  font-family: var(--font-display); font-size: 2rem; font-weight: 900;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--flame); opacity: 0.7; line-height: 1;
+}
+.fb-sub {
+  font-family: var(--font-serif); font-size: 1rem; font-style: italic; font-weight: 300;
+  color: rgba(212,168,71,0.4); margin-top: 0.2rem;
+}
+.fb-dioc {
+  font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(245,237,216,0.2); margin-top: 0.8rem;
+}
+.fb-email {
+  display: block; margin-top: 0.8rem;
+  font-size: 0.78rem; color: rgba(245,237,216,0.25); text-decoration: none;
+  transition: color 0.2s;
+}
+.fb-email:hover { color: var(--gold2); }
+
+.footer-nav { display: flex; gap: 3rem; flex-wrap: wrap; }
+.footer-nav-col h4 {
+  font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--flame); opacity: 0.6; margin-bottom: 1rem;
+}
+.footer-nav-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-nav-col ul a {
+  font-size: 0.82rem; color: rgba(245,237,216,0.3); text-decoration: none; transition: color 0.2s;
+}
+.footer-nav-col ul a:hover { color: var(--gold2); }
+
+.footer-social { display: flex; gap: 0.8rem; align-items: flex-start; }
+.footer-social a {
+  width: 38px; height: 38px; border: 1px solid rgba(212,168,71,0.12); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; transition: border-color 0.2s, background 0.2s;
+}
+.footer-social a:hover { border-color: rgba(212,168,71,0.4); background: rgba(212,168,71,0.05); }
+.footer-social svg { width: 15px; height: 15px; stroke: rgba(212,168,71,0.45); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(212,168,71,0.08); padding-top: 2rem;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 0.72rem; color: rgba(245,237,216,0.15); }
+
+@media (max-width: 900px) {
+  footer { padding: 3.5rem 1.5rem 2rem; }
+  .footer-top { flex-direction: column; gap: 2rem; }
+}
+</style>

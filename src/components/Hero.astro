@@ -1,0 +1,239 @@
+---
+---
+<section class="hero" id="inicio" aria-label="Bienvenida">
+  <div class="hero-rays" aria-hidden="true"></div>
+  <div class="hero-candles" aria-hidden="true"></div>
+
+  <!-- Partículas de luz -->
+  <div class="hero-particles" aria-hidden="true">
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge" aria-label="Diócesis de Orihuela · Alicante">
+      Diócesis de Orihuela · Alicante
+    </div>
+
+    <h1 class="hero-name">Kairós</h1>
+    <p class="hero-grace">Momento de Gracia</p>
+
+    <p class="hero-tagline" aria-label="Adoración, Reconciliación y Encuentro">
+      <strong>Adoración</strong> &nbsp;·&nbsp;
+      <strong>Reconciliación</strong> &nbsp;·&nbsp;
+      <strong>Encuentro</strong>
+    </p>
+
+    <blockquote class="hero-mission">
+      <p>"Nuestra vocación: la música, la pintura, la Adoración.<br>
+      Nuestra misión: ponerla al servicio de Dios."</p>
+    </blockquote>
+
+    <div class="hero-actions">
+      <a href="#conciertos" class="btn-flame">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 6l4-4 4 4M12 2v13M20 21H4"/></svg>
+        Próximos conciertos
+      </a>
+      <a href="#adoracion" class="btn-ghost">Conoce el grupo</a>
+    </div>
+
+    <!-- CTA especial para quien llega por QR -->
+    <div class="hero-qr-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      Estás en la iglesia. Bienvenido al momento de gracia.
+    </div>
+  </div>
+
+  <a href="#adoracion" class="hero-scroll" aria-label="Desplazarse hacia abajo">
+    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+</section>
+
+<style>
+.hero {
+  min-height: 100svh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 9rem 2rem 7rem;
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(ellipse 30% 25% at 50% 85%, rgba(232,136,42,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 15% 20% at 25% 90%, rgba(212,168,71,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 15% 20% at 75% 90%, rgba(212,168,71,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 8% 15% at 15% 82%, rgba(232,136,42,0.08) 0%, transparent 40%),
+    radial-gradient(ellipse 8% 15% at 85% 82%, rgba(232,136,42,0.08) 0%, transparent 40%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(180,90,10,0.18) 0%, transparent 55%),
+    linear-gradient(180deg, #0a0804 0%, #13100a 40%, #1a1408 70%, #0e0b06 100%);
+}
+
+.hero-rays {
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; height: 70%; pointer-events: none; overflow: hidden;
+}
+.hero-rays::before {
+  content: '';
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 200%; height: 100%;
+  background: conic-gradient(
+    from -10deg at 50% 110%,
+    transparent 0deg,
+    rgba(212,168,71,0.018) 2deg,
+    transparent 4deg,
+    rgba(232,136,42,0.015) 8deg,
+    transparent 11deg,
+    rgba(212,168,71,0.02) 14deg,
+    transparent 17deg,
+    rgba(232,136,42,0.012) 22deg,
+    transparent 25deg,
+    rgba(212,168,71,0.018) 28deg,
+    transparent 31deg,
+    rgba(232,136,42,0.015) 36deg,
+    transparent 38deg
+  );
+}
+
+.hero-candles {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 120px; pointer-events: none;
+  background:
+    radial-gradient(ellipse 3% 40% at 20% 100%, rgba(232,136,42,0.25) 0%, transparent 70%),
+    radial-gradient(ellipse 3% 40% at 35% 100%, rgba(212,168,71,0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 3% 40% at 50% 100%, rgba(232,136,42,0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 3% 40% at 65% 100%, rgba(212,168,71,0.2) 0%, transparent 70%),
+    radial-gradient(ellipse 3% 40% at 80% 100%, rgba(232,136,42,0.25) 0%, transparent 70%),
+    linear-gradient(to top, rgba(14,10,4,0.9) 0%, transparent 100%);
+}
+
+/* Partículas flotantes */
+.hero-particles {
+  position: absolute; inset: 0; pointer-events: none;
+  overflow: hidden;
+}
+.hero-particles span {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-float var(--dur, 8s) ease-in-out var(--delay, 0s) infinite;
+}
+.hero-particles span:nth-child(1) { left: 20%; top: 70%; --delay: 0s; --dur: 9s; }
+.hero-particles span:nth-child(2) { left: 45%; top: 80%; --delay: 1.5s; --dur: 7s; }
+.hero-particles span:nth-child(3) { left: 65%; top: 75%; --delay: 3s; --dur: 10s; }
+.hero-particles span:nth-child(4) { left: 30%; top: 85%; --delay: 0.5s; --dur: 8s; width: 3px; height: 3px; }
+.hero-particles span:nth-child(5) { left: 75%; top: 72%; --delay: 2s; --dur: 11s; }
+.hero-particles span:nth-child(6) { left: 55%; top: 88%; --delay: 4s; --dur: 8s; width: 2px; height: 2px; }
+
+@keyframes particle-float {
+  0% { opacity: 0; transform: translateY(0) scale(1); }
+  20% { opacity: 0.7; }
+  80% { opacity: 0.3; }
+  100% { opacity: 0; transform: translateY(-120px) scale(0.5); }
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 820px; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(212,168,71,0.75); border: 1px solid var(--bg-gold);
+  padding: 0.45rem 1.2rem; border-radius: 1px; margin-bottom: 2.5rem;
+  animation: fade-in 1s ease both;
+}
+.hero-badge::before, .hero-badge::after { content: '✦'; font-size: 0.5rem; color: var(--gold); opacity: 0.6; }
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 12vw, 10rem); font-weight: 900;
+  line-height: 0.9; letter-spacing: -0.02em;
+  color: var(--flame); text-transform: uppercase;
+  text-shadow: 0 0 60px rgba(232,136,42,0.5), 0 0 120px rgba(212,168,71,0.2);
+  margin-bottom: 0.5rem;
+  animation: fade-up 1s ease 0.2s both;
+}
+
+.hero-grace {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 300; font-style: italic;
+  color: var(--gold2); letter-spacing: 0.04em; margin-bottom: 2rem;
+  animation: fade-up 1s ease 0.35s both;
+}
+
+.hero-tagline {
+  font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(245,237,216,0.4); margin-bottom: 1.5rem;
+  animation: fade-up 1s ease 0.5s both;
+}
+.hero-tagline strong { color: rgba(245,237,216,0.7); font-weight: 500; }
+
+.hero-mission {
+  font-family: var(--font-serif);
+  font-size: 1.05rem; font-weight: 300; font-style: italic;
+  color: rgba(245,237,216,0.45); max-width: 520px; margin: 0 auto 3rem;
+  line-height: 1.8; border: none;
+  animation: fade-up 1s ease 0.65s both;
+}
+
+.hero-actions {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  animation: fade-up 1s ease 0.8s both;
+}
+
+.btn-flame {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--deep); background: var(--flame);
+  padding: 1rem 2.5rem; border-radius: 2px; text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-flame:hover { background: var(--gold2); transform: translateY(-1px); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(212,168,71,0.75); border: 1px solid var(--bg-gold);
+  padding: 1rem 2.5rem; border-radius: 2px; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+
+/* Nota QR */
+.hero-qr-note {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 0.82rem; font-style: italic;
+  color: rgba(240,201,106,0.5);
+  animation: fade-up 1s ease 1s both;
+}
+.hero-qr-note svg { stroke: var(--flame); opacity: 0.7; flex-shrink: 0; }
+
+/* Scroll indicator */
+.hero-scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  animation: scrollbounce 2.2s ease-in-out infinite;
+  opacity: 0.35; text-decoration: none;
+}
+.hero-scroll svg {
+  width: 22px; height: 22px; stroke: var(--gold);
+  fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+}
+@keyframes scrollbounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(7px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; }
+}
+</style>

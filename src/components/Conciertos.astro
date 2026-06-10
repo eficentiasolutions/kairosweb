@@ -1,0 +1,191 @@
+---
+import { conciertos } from '../data/conciertos.js';
+
+const futuros = conciertos.filter(c => c.estado === 'confirmado');
+const pasados = conciertos.filter(c => c.estado === 'pasado');
+---
+<section id="conciertos" class="section-conciertos" aria-labelledby="conciertos-title">
+  <div class="container">
+    <div class="concert-header reveal">
+      <div>
+        <div class="s-label">Agenda</div>
+        <h2 class="s-title" id="conciertos-title">Próximos <em>conciertos</em></h2>
+      </div>
+      <p>Síguenos en Instagram para estar al día. Actualizamos la agenda con frecuencia.</p>
+    </div>
+
+    <div class="concert-list" role="list">
+      {futuros.length === 0 && pasados.length === 0 && (
+        <div class="concerts-empty">
+          <p>Próximamente nuevas fechas. <a href="https://www.instagram.com/kairosmomentodegracia/" target="_blank" rel="noopener">Síguenos en Instagram</a> para no perderte ninguna.</p>
+        </div>
+      )}
+
+      {futuros.map(c => (
+        <a
+          href={c.instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="concert-item reveal"
+          role="listitem"
+          aria-label={`${c.titulo}, ${c.dia} de ${c.mesCompleto} en ${c.lugar}`}
+        >
+          <div class="c-date">
+            <div class="day">{c.dia}</div>
+            <div class="month">{c.mes}</div>
+          </div>
+          <div class="c-info">
+            <h3>{c.titulo}</h3>
+            <span class="c-place">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {c.lugar} &nbsp;·&nbsp; {c.detalles}
+            </span>
+          </div>
+          <span class="c-tag confirmed" aria-label="Confirmado">Confirmado</span>
+        </a>
+      ))}
+
+      {pasados.map(c => (
+        <a
+          href={c.instagramUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="concert-item reveal"
+          role="listitem"
+          aria-label={`${c.titulo}, ${c.dia} de ${c.mesCompleto} en ${c.lugar} (pasado)`}
+        >
+          <div class="c-date past-date">
+            <div class="day">{c.dia}</div>
+            <div class="month">{c.mes}</div>
+          </div>
+          <div class="c-info">
+            <h3>{c.titulo}</h3>
+            <span class="c-place">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {c.lugar} &nbsp;·&nbsp; {c.detalles}
+            </span>
+          </div>
+          <span class="c-tag past" aria-label="Pasado">Pasado</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="concerts-footer reveal">
+      <p>¿Tu parroquia quiere que actuemos?</p>
+      <a href="#contacto" class="btn-flame-sm">
+        Escríbenos
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+.section-conciertos {
+  padding: 7rem 2rem;
+  background: var(--deep);
+  border-top: 1px solid var(--bg-gold);
+  border-bottom: 1px solid var(--bg-gold);
+}
+.container { max-width: 1120px; margin: 0 auto; }
+
+.s-label {
+  font-size: 0.63rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--flame); margin-bottom: 0.9rem;
+  display: flex; align-items: center; gap: 0.7rem;
+}
+.s-label::after { content: ''; display: block; width: 32px; height: 1px; background: var(--flame); opacity: 0.4; }
+
+.s-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; line-height: 1.1;
+  color: var(--cream); margin-bottom: 1.5rem;
+}
+.s-title em { font-style: italic; color: var(--gold2); font-weight: 400; }
+
+.concert-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;
+}
+.concert-header p { font-size: 0.88rem; color: var(--muted); max-width: 420px; line-height: 1.7; }
+
+.concert-list { display: flex; flex-direction: column; gap: 3px; }
+
+.concert-item {
+  display: grid; grid-template-columns: 80px 1fr auto; gap: 2rem; align-items: center;
+  padding: 1.6rem 2rem; border: 1px solid rgba(212,168,71,0.1); border-radius: 3px;
+  background: rgba(255,255,255,0.02); text-decoration: none; color: inherit;
+  transition: all 0.25s; position: relative; overflow: hidden;
+}
+.concert-item::after {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--flame); transform: scaleY(0); transform-origin: bottom; transition: transform 0.25s;
+}
+.concert-item:hover { background: rgba(232,136,42,0.05); border-color: var(--bg-flame); }
+.concert-item:hover::after { transform: scaleY(1); }
+
+.c-date { text-align: center; border-right: 1px solid rgba(212,168,71,0.12); padding-right: 2rem; }
+.c-date .day {
+  font-family: var(--font-display); font-size: 2.4rem; font-weight: 700;
+  color: var(--flame); line-height: 1;
+}
+.c-date .month {
+  font-size: 0.6rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(212,168,71,0.45); margin-top: 0.1rem;
+}
+.past-date .day { color: var(--muted); }
+
+.c-info h3 {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 400;
+  color: var(--cream); margin-bottom: 0.35rem;
+}
+.c-place {
+  font-size: 0.8rem; color: var(--muted);
+  display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;
+}
+.c-place svg {
+  width: 12px; height: 12px; stroke: var(--flame); fill: none;
+  stroke-width: 1.5; stroke-linecap: round; flex-shrink: 0;
+}
+
+.c-tag {
+  font-size: 0.62rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 0.3rem 0.85rem; border-radius: 2px; white-space: nowrap;
+}
+.c-tag.confirmed { color: var(--flame); border: 1px solid var(--bg-flame); }
+.c-tag.past { color: var(--muted); border: 1px solid rgba(138,122,98,0.2); }
+
+.concerts-empty {
+  padding: 3rem; text-align: center;
+  border: 1px dashed rgba(212,168,71,0.15); border-radius: 3px;
+}
+.concerts-empty p {
+  font-family: var(--font-serif); font-size: 1.1rem; font-style: italic; color: var(--muted);
+}
+.concerts-empty a { color: var(--gold2); text-decoration: none; }
+
+.concerts-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 2.5rem; flex-wrap: wrap; gap: 1rem;
+}
+.concerts-footer p { font-size: 0.9rem; color: var(--muted); }
+
+.btn-flame-sm {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--deep); background: var(--flame);
+  padding: 0.75rem 1.8rem; border-radius: 2px; text-decoration: none;
+  transition: background 0.2s, gap 0.2s;
+}
+.btn-flame-sm:hover { background: var(--gold2); gap: 0.8rem; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+  .section-conciertos { padding: 4.5rem 1.5rem; }
+  .concert-item { grid-template-columns: 65px 1fr; gap: 1rem; }
+  .c-tag { display: none; }
+}
+</style>

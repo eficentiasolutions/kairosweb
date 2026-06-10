@@ -1,0 +1,134 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'Kairós · Momento de Gracia — Música al servicio de Dios',
+  description = 'Grupo de adoración de la Diócesis de Orihuela-Alicante. Adoración eucarística, reconciliación y encuentro a través de la música y la pintura.',
+  canonical = 'https://kairosmomentodegracia.es/',
+  ogImage = 'https://kairosmomentodegracia.es/og-image.jpg',
+} = Astro.props;
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Kairós Momento de Gracia",
+  "alternateName": "Kairós",
+  "description": description,
+  "url": "https://kairosmomentodegracia.es",
+  "genre": ["Christian music", "Adoración", "Música religiosa"],
+  "foundingLocation": {
+    "@type": "AdministrativeArea",
+    "name": "Diócesis de Orihuela-Alicante",
+    "addressRegion": "Comunitat Valenciana",
+    "addressCountry": "ES"
+  },
+  "sameAs": [
+    "https://www.instagram.com/kairosmomentodegracia/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "kairosmomentodegracia@gmail.com",
+    "contactType": "booking"
+  }
+};
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="Kairós Momento de Gracia" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Tema y PWA -->
+  <meta name="theme-color" content="#E8882A" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://www.instagram.com" />
+
+  <!-- Favicon inline SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+
+  <style>
+    :root {
+      --flame:     #E8882A;
+      --gold:      #D4A847;
+      --gold2:     #F0C96A;
+      --cream:     #F5EDD8;
+      --deep:      #0E0C08;
+      --deep2:     #1A1610;
+      --deep3:     #241E14;
+      --muted:     #8A7A62;
+      --bg-gold:   rgba(212,168,71,0.18);
+      --bg-flame:  rgba(232,136,42,0.20);
+      --font-display: 'Didot', 'Bodoni MT', 'Playfair Display', 'Cormorant Garamond', 'Garamond', Georgia, serif;
+      --font-serif:   'Garamond', 'Hoefler Text', 'Times New Roman', Georgia, serif;
+      --font-body:    'Optima', 'Gill Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--deep);
+      color: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Skip to content */
+    .skip-link {
+      position: absolute; top: -100%; left: 1rem;
+      background: var(--flame); color: var(--deep);
+      padding: 0.5rem 1rem; border-radius: 0 0 4px 4px;
+      font-size: 0.85rem; font-weight: 600; text-decoration: none; z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* Focus visible */
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--deep); }
+    ::-webkit-scrollbar-thumb { background: rgba(212,168,71,0.3); border-radius: 3px; }
+
+    /* Selection */
+    ::selection { background: rgba(232,136,42,0.35); color: var(--cream); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+  <slot />
+</body>
+</html>
