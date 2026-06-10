@@ -1,34 +1,150 @@
 ---
 ---
 <section class="hero" id="inicio" aria-label="Bienvenida">
-  <div class="hero-rays" aria-hidden="true"></div>
-  <div class="hero-candles" aria-hidden="true"></div>
 
-  <!-- Partículas de luz -->
+  <!-- ① Luz divina animada desde arriba -->
+  <div class="hero-divine-light" aria-hidden="true"></div>
+
+  <!-- ② Rosetón gótico SVG (centro-arriba, muy sutil) -->
+  <div class="hero-rosette" aria-hidden="true">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <!-- Círculo exterior -->
+      <circle cx="200" cy="200" r="195" fill="none" stroke="rgba(212,168,71,0.07)" stroke-width="1"/>
+      <circle cx="200" cy="200" r="165" fill="none" stroke="rgba(212,168,71,0.05)" stroke-width="0.8"/>
+      <!-- 12 pétalos del rosetón -->
+      <g opacity="0.06">
+        <circle cx="200" cy="60"  r="36" fill="rgba(212,168,71,0.6)"/>
+        <circle cx="268" cy="92"  r="36" fill="rgba(212,168,71,0.6)"/>
+        <circle cx="310" cy="160" r="36" fill="rgba(212,168,71,0.6)"/>
+        <circle cx="310" cy="240" r="36" fill="rgba(212,168,71,0.6)"/>
+        <circle cx="268" cy="308" r="36" fill="rgba(212,168,71,0.6)"/>
+        <circle cx="200" cy="340" r="36" fill="rgba(212,168,71,0.6)"/>
+        <circle cx="132" cy="308" r="36" fill="rgba(212,168,71,0.6)"/>
+        <circle cx="90"  cy="240" r="36" fill="rgba(212,168,71,0.6)"/>
+        <circle cx="90"  cy="160" r="36" fill="rgba(212,168,71,0.6)"/>
+        <circle cx="132" cy="92"  r="36" fill="rgba(212,168,71,0.6)"/>
+        <!-- Pétalos interiores -->
+        <circle cx="200" cy="120" r="22" fill="rgba(232,136,42,0.5)"/>
+        <circle cx="248" cy="148" r="22" fill="rgba(232,136,42,0.5)"/>
+        <circle cx="270" cy="200" r="22" fill="rgba(232,136,42,0.5)"/>
+        <circle cx="248" cy="252" r="22" fill="rgba(232,136,42,0.5)"/>
+        <circle cx="200" cy="280" r="22" fill="rgba(232,136,42,0.5)"/>
+        <circle cx="152" cy="252" r="22" fill="rgba(232,136,42,0.5)"/>
+        <circle cx="130" cy="200" r="22" fill="rgba(232,136,42,0.5)"/>
+        <circle cx="152" cy="148" r="22" fill="rgba(232,136,42,0.5)"/>
+        <!-- Centro -->
+        <circle cx="200" cy="200" r="30" fill="rgba(240,201,106,0.5)"/>
+        <circle cx="200" cy="200" r="12" fill="rgba(255,220,100,0.7)"/>
+      </g>
+      <!-- Radio lines -->
+      <g stroke="rgba(212,168,71,0.05)" stroke-width="0.8">
+        <line x1="200" y1="5"   x2="200" y2="395"/>
+        <line x1="5"   y1="200" x2="395" y2="200"/>
+        <line x1="60"  y1="60"  x2="340" y2="340"/>
+        <line x1="340" y1="60"  x2="60"  y2="340"/>
+        <line x1="110" y1="20"  x2="290" y2="380"/>
+        <line x1="20"  y1="110" x2="380" y2="290"/>
+        <line x1="290" y1="20"  x2="110" y2="380"/>
+        <line x1="380" y1="110" x2="20"  y2="290"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ③ Rayos cónicos animados -->
+  <div class="hero-rays" aria-hidden="true"></div>
+
+  <!-- ④ Silueta de catedral / arcos góticos en la base -->
+  <div class="hero-cathedral" aria-hidden="true">
+    <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Muros laterales -->
+      <rect x="0"    y="160" width="80"  height="160" fill="#07060300"/>
+      <rect x="1360" y="160" width="80"  height="160" fill="#07060300"/>
+      <!-- Nave central — arco apuntado grande -->
+      <path d="M560,320 L560,180 Q720,60 880,180 L880,320 Z"
+            fill="rgba(7,6,3,0.55)"/>
+      <!-- Naves laterales — arcos más bajos -->
+      <path d="M300,320 L300,220 Q400,140 500,220 L500,320 Z"
+            fill="rgba(7,6,3,0.4)"/>
+      <path d="M940,320 L940,220 Q1040,140 1140,220 L1140,320 Z"
+            fill="rgba(7,6,3,0.4)"/>
+      <!-- Arbotantes muy pequeños -->
+      <path d="M100,320 L100,260 Q180,200 260,260 L260,320 Z"
+            fill="rgba(7,6,3,0.25)"/>
+      <path d="M1180,320 L1180,260 Q1260,200 1340,260 L1340,320 Z"
+            fill="rgba(7,6,3,0.25)"/>
+      <!-- Línea de suelo / base -->
+      <rect x="0" y="310" width="1440" height="10" fill="rgba(212,168,71,0.06)"/>
+      <!-- Ventanas iluminadas en los arcos -->
+      <ellipse cx="720" cy="190" rx="60" ry="80"
+               fill="none" stroke="rgba(212,168,71,0.07)" stroke-width="1.5"/>
+      <ellipse cx="400" cy="235" rx="36" ry="48"
+               fill="none" stroke="rgba(212,168,71,0.05)" stroke-width="1"/>
+      <ellipse cx="1040" cy="235" rx="36" ry="48"
+               fill="none" stroke="rgba(212,168,71,0.05)" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <!-- ⑤ Velas SVG con llama animada -->
+  <div class="hero-candles-svg" aria-hidden="true">
+    <!-- Vela 1 (izq lejos) -->
+    <svg class="candle" style="left:12%;bottom:0;height:90px" viewBox="0 0 24 90">
+      <rect x="9" y="30" width="6" height="60" rx="3" fill="rgba(245,237,216,0.12)"/>
+      <ellipse class="flame" cx="12" cy="27" rx="4" ry="6" fill="rgba(240,180,60,0.8)"/>
+      <ellipse cx="12" cy="29" rx="2.5" ry="4" fill="rgba(255,140,20,0.9)"/>
+      <ellipse cx="12" cy="31" rx="1.5" ry="2" fill="rgba(255,220,100,1)"/>
+    </svg>
+    <!-- Vela 2 -->
+    <svg class="candle" style="left:25%;bottom:0;height:110px" viewBox="0 0 24 90">
+      <rect x="9" y="30" width="6" height="60" rx="3" fill="rgba(245,237,216,0.15)"/>
+      <ellipse class="flame" cx="12" cy="26" rx="4.5" ry="7" fill="rgba(232,136,42,0.85)"/>
+      <ellipse cx="12" cy="29" rx="2.8" ry="4.5" fill="rgba(255,130,15,0.9)"/>
+      <ellipse cx="12" cy="31" rx="1.5" ry="2.5" fill="rgba(255,230,120,1)"/>
+    </svg>
+    <!-- Vela 3 central grande -->
+    <svg class="candle" style="left:50%;transform:translateX(-50%);bottom:0;height:130px" viewBox="0 0 30 100">
+      <rect x="11" y="30" width="8" height="70" rx="4" fill="rgba(245,237,216,0.18)"/>
+      <ellipse class="flame" cx="15" cy="25" rx="5.5" ry="9" fill="rgba(240,160,40,0.9)"/>
+      <ellipse cx="15" cy="29" rx="3.5" ry="5.5" fill="rgba(255,120,10,0.95)"/>
+      <ellipse cx="15" cy="32" rx="2" ry="3" fill="rgba(255,240,140,1)"/>
+    </svg>
+    <!-- Vela 4 -->
+    <svg class="candle" style="left:75%;bottom:0;height:108px" viewBox="0 0 24 90">
+      <rect x="9" y="30" width="6" height="60" rx="3" fill="rgba(245,237,216,0.15)"/>
+      <ellipse class="flame" cx="12" cy="26" rx="4.5" ry="7" fill="rgba(232,136,42,0.85)"/>
+      <ellipse cx="12" cy="29" rx="2.8" ry="4.5" fill="rgba(255,130,15,0.9)"/>
+      <ellipse cx="12" cy="31" rx="1.5" ry="2.5" fill="rgba(255,230,120,1)"/>
+    </svg>
+    <!-- Vela 5 (der lejos) -->
+    <svg class="candle" style="left:88%;bottom:0;height:88px" viewBox="0 0 24 90">
+      <rect x="9" y="30" width="6" height="60" rx="3" fill="rgba(245,237,216,0.12)"/>
+      <ellipse class="flame" cx="12" cy="27" rx="4" ry="6" fill="rgba(240,180,60,0.8)"/>
+      <ellipse cx="12" cy="29" rx="2.5" ry="4" fill="rgba(255,140,20,0.9)"/>
+      <ellipse cx="12" cy="31" rx="1.5" ry="2" fill="rgba(255,220,100,1)"/>
+    </svg>
+  </div>
+
+  <!-- ⑥ Partículas de brasa (más numerosas) -->
   <div class="hero-particles" aria-hidden="true">
     <span></span><span></span><span></span>
     <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+    <span></span>
   </div>
 
+  <!-- Contenido principal -->
   <div class="hero-content">
-    <div class="hero-badge" aria-label="Diócesis de Orihuela · Alicante">
-      Diócesis de Orihuela · Alicante
-    </div>
-
+    <div class="hero-badge">Diócesis de Orihuela · Alicante</div>
     <h1 class="hero-name">Kairós</h1>
     <p class="hero-grace">Momento de Gracia</p>
-
-    <p class="hero-tagline" aria-label="Adoración, Reconciliación y Encuentro">
+    <p class="hero-tagline">
       <strong>Adoración</strong> &nbsp;·&nbsp;
       <strong>Reconciliación</strong> &nbsp;·&nbsp;
       <strong>Encuentro</strong>
     </p>
-
     <blockquote class="hero-mission">
       <p>"Nuestra vocación: la música, la pintura, la Adoración.<br>
       Nuestra misión: ponerla al servicio de Dios."</p>
     </blockquote>
-
     <div class="hero-actions">
       <a href="#conciertos" class="btn-flame">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 6l4-4 4 4M12 2v13M20 21H4"/></svg>
@@ -36,8 +152,6 @@
       </a>
       <a href="#adoracion" class="btn-ghost">Conoce el grupo</a>
     </div>
-
-    <!-- CTA especial para quien llega por QR -->
     <div class="hero-qr-note">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
         <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
@@ -53,87 +167,158 @@
 </section>
 
 <style>
+/* ── Base ── */
 .hero {
   min-height: 100svh;
   display: flex; align-items: center; justify-content: center;
-  text-align: center; padding: 9rem 2rem 7rem;
+  text-align: center; padding: 9rem 2rem 10rem;
   position: relative; overflow: hidden;
   background:
-    radial-gradient(ellipse 30% 25% at 50% 85%, rgba(232,136,42,0.22) 0%, transparent 60%),
-    radial-gradient(ellipse 15% 20% at 25% 90%, rgba(212,168,71,0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 15% 20% at 75% 90%, rgba(212,168,71,0.12) 0%, transparent 50%),
-    radial-gradient(ellipse 8% 15% at 15% 82%, rgba(232,136,42,0.08) 0%, transparent 40%),
-    radial-gradient(ellipse 8% 15% at 85% 82%, rgba(232,136,42,0.08) 0%, transparent 40%),
-    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(180,90,10,0.18) 0%, transparent 55%),
-    linear-gradient(180deg, #0a0804 0%, #13100a 40%, #1a1408 70%, #0e0b06 100%);
+    radial-gradient(ellipse 40% 30% at 50% 88%, rgba(232,136,42,0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 20% 20% at 25% 92%, rgba(212,168,71,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 20% 20% at 75% 92%, rgba(212,168,71,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 10% 18% at 12% 84%, rgba(232,136,42,0.1) 0%, transparent 40%),
+    radial-gradient(ellipse 10% 18% at 88% 84%, rgba(232,136,42,0.1) 0%, transparent 40%),
+    radial-gradient(ellipse 70% 50% at 50% 100%, rgba(180,90,10,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 35% at 50% 0%,   rgba(30,18,6,0.6)   0%, transparent 60%),
+    linear-gradient(180deg, #060503 0%, #0e0b06 30%, #1a1408 65%, #0a0804 100%);
 }
 
+/* ── ① Luz divina desde arriba ── */
+.hero-divine-light {
+  position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+  width: 60%; height: 75%;
+  background: radial-gradient(ellipse 50% 80% at 50% 0%,
+    rgba(240,201,106,0.12) 0%,
+    rgba(232,136,42,0.06) 30%,
+    transparent 70%);
+  pointer-events: none;
+  animation: divine-breathe 6s ease-in-out infinite;
+}
+@keyframes divine-breathe {
+  0%,100% { opacity: 0.6; transform: translateX(-50%) scaleY(1); }
+  50%      { opacity: 1;   transform: translateX(-50%) scaleY(1.06); }
+}
+
+/* ── ② Rosetón ── */
+.hero-rosette {
+  position: absolute; top: -8%; left: 50%; transform: translateX(-50%);
+  width: min(520px, 90vw); height: min(520px, 90vw);
+  pointer-events: none;
+  animation: rosette-spin 90s linear infinite;
+  opacity: 0.9;
+}
+.hero-rosette svg { width: 100%; height: 100%; }
+@keyframes rosette-spin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* ── ③ Rayos cónicos ── */
 .hero-rays {
-  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 100%; height: 70%; pointer-events: none; overflow: hidden;
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
 }
 .hero-rays::before {
   content: '';
-  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 200%; height: 100%;
+  position: absolute; bottom: -5%; left: 50%; transform: translateX(-50%);
+  width: 220%; height: 100%;
   background: conic-gradient(
-    from -10deg at 50% 110%,
+    from -15deg at 50% 115%,
     transparent 0deg,
-    rgba(212,168,71,0.018) 2deg,
-    transparent 4deg,
-    rgba(232,136,42,0.015) 8deg,
-    transparent 11deg,
-    rgba(212,168,71,0.02) 14deg,
-    transparent 17deg,
-    rgba(232,136,42,0.012) 22deg,
-    transparent 25deg,
-    rgba(212,168,71,0.018) 28deg,
-    transparent 31deg,
-    rgba(232,136,42,0.015) 36deg,
-    transparent 38deg
+    rgba(212,168,71,0.022) 2.5deg,
+    transparent 5deg,
+    rgba(232,136,42,0.018) 9deg,
+    transparent 12deg,
+    rgba(212,168,71,0.028) 16deg,
+    transparent 19deg,
+    rgba(240,201,106,0.015) 23deg,
+    transparent 26deg,
+    rgba(232,136,42,0.022) 30deg,
+    transparent 33deg,
+    rgba(212,168,71,0.02)  37deg,
+    transparent 40deg
   );
+  animation: rays-pulse 8s ease-in-out infinite;
+}
+@keyframes rays-pulse {
+  0%,100% { opacity: 0.7; }
+  50%      { opacity: 1.3; }
 }
 
-.hero-candles {
+/* ── ④ Catedral SVG ── */
+.hero-cathedral {
   position: absolute; bottom: 0; left: 0; right: 0;
-  height: 120px; pointer-events: none;
-  background:
-    radial-gradient(ellipse 3% 40% at 20% 100%, rgba(232,136,42,0.25) 0%, transparent 70%),
-    radial-gradient(ellipse 3% 40% at 35% 100%, rgba(212,168,71,0.2) 0%, transparent 70%),
-    radial-gradient(ellipse 3% 40% at 50% 100%, rgba(232,136,42,0.3) 0%, transparent 70%),
-    radial-gradient(ellipse 3% 40% at 65% 100%, rgba(212,168,71,0.2) 0%, transparent 70%),
-    radial-gradient(ellipse 3% 40% at 80% 100%, rgba(232,136,42,0.25) 0%, transparent 70%),
-    linear-gradient(to top, rgba(14,10,4,0.9) 0%, transparent 100%);
+  height: 340px; pointer-events: none;
+}
+.hero-cathedral svg {
+  width: 100%; height: 100%;
+  filter: drop-shadow(0 -8px 24px rgba(212,168,71,0.06));
 }
 
-/* Partículas flotantes */
+/* ── ⑤ Velas SVG ── */
+.hero-candles-svg {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  pointer-events: none;
+}
+.candle {
+  position: absolute; width: 24px;
+  filter: drop-shadow(0 0 8px rgba(232,136,42,0.5));
+}
+/* Llama principal: parpadeo irregular */
+.candle .flame {
+  transform-origin: center bottom;
+  animation: flicker var(--f-dur, 1.8s) ease-in-out var(--f-del, 0s) infinite;
+}
+.candle:nth-child(1) .flame { --f-dur: 2.1s; --f-del: 0s; }
+.candle:nth-child(2) .flame { --f-dur: 1.7s; --f-del: 0.4s; }
+.candle:nth-child(3) .flame { --f-dur: 2.3s; --f-del: 0.8s; }
+.candle:nth-child(4) .flame { --f-dur: 1.9s; --f-del: 0.2s; }
+.candle:nth-child(5) .flame { --f-dur: 2.0s; --f-del: 0.6s; }
+
+@keyframes flicker {
+  0%   { transform: scaleX(1)    scaleY(1)    skewX(0deg);  opacity: 0.85; }
+  15%  { transform: scaleX(0.88) scaleY(1.08) skewX(-2deg); opacity: 0.95; }
+  30%  { transform: scaleX(1.05) scaleY(0.95) skewX(1deg);  opacity: 0.8; }
+  50%  { transform: scaleX(0.92) scaleY(1.1)  skewX(2deg);  opacity: 1;   }
+  70%  { transform: scaleX(1.08) scaleY(0.92) skewX(-1deg); opacity: 0.88; }
+  85%  { transform: scaleX(0.95) scaleY(1.05) skewX(0deg);  opacity: 0.92; }
+  100% { transform: scaleX(1)    scaleY(1)    skewX(0deg);  opacity: 0.85; }
+}
+
+/* ── ⑥ Partículas de brasa ── */
 .hero-particles {
-  position: absolute; inset: 0; pointer-events: none;
-  overflow: hidden;
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden;
 }
 .hero-particles span {
-  position: absolute;
-  width: 2px; height: 2px;
-  background: var(--gold);
-  border-radius: 50%;
-  opacity: 0;
-  animation: particle-float var(--dur, 8s) ease-in-out var(--delay, 0s) infinite;
+  position: absolute; border-radius: 50%; opacity: 0;
+  animation: ember-rise var(--dur, 9s) ease-in var(--delay, 0s) infinite;
+  background: var(--col, var(--gold));
+  width: var(--sz, 2px); height: var(--sz, 2px);
 }
-.hero-particles span:nth-child(1) { left: 20%; top: 70%; --delay: 0s; --dur: 9s; }
-.hero-particles span:nth-child(2) { left: 45%; top: 80%; --delay: 1.5s; --dur: 7s; }
-.hero-particles span:nth-child(3) { left: 65%; top: 75%; --delay: 3s; --dur: 10s; }
-.hero-particles span:nth-child(4) { left: 30%; top: 85%; --delay: 0.5s; --dur: 8s; width: 3px; height: 3px; }
-.hero-particles span:nth-child(5) { left: 75%; top: 72%; --delay: 2s; --dur: 11s; }
-.hero-particles span:nth-child(6) { left: 55%; top: 88%; --delay: 4s; --dur: 8s; width: 2px; height: 2px; }
+.hero-particles span:nth-child(1)  { left:18%; top:82%; --delay:0s;   --dur:8s;  --sz:2px; --col:rgba(240,201,106,0.8); }
+.hero-particles span:nth-child(2)  { left:33%; top:88%; --delay:1.2s; --dur:7s;  --sz:2px; --col:rgba(232,136,42,0.7); }
+.hero-particles span:nth-child(3)  { left:50%; top:85%; --delay:0.5s; --dur:10s; --sz:3px; --col:rgba(240,201,106,0.9); }
+.hero-particles span:nth-child(4)  { left:67%; top:88%; --delay:2s;   --dur:7.5s;--sz:2px; --col:rgba(232,136,42,0.7); }
+.hero-particles span:nth-child(5)  { left:82%; top:82%; --delay:0.8s; --dur:9s;  --sz:2px; --col:rgba(240,201,106,0.8); }
+.hero-particles span:nth-child(6)  { left:25%; top:90%; --delay:3s;   --dur:8.5s;--sz:1.5px;--col:rgba(255,200,80,0.6); }
+.hero-particles span:nth-child(7)  { left:44%; top:87%; --delay:1.8s; --dur:9.5s;--sz:2px; --col:rgba(232,136,42,0.8); }
+.hero-particles span:nth-child(8)  { left:58%; top:89%; --delay:4s;   --dur:8s;  --sz:1.5px;--col:rgba(240,201,106,0.7); }
+.hero-particles span:nth-child(9)  { left:74%; top:84%; --delay:2.5s; --dur:7s;  --sz:2px; --col:rgba(232,136,42,0.6); }
+.hero-particles span:nth-child(10) { left:88%; top:86%; --delay:0.3s; --dur:11s; --sz:1.5px;--col:rgba(255,200,80,0.5); }
 
-@keyframes particle-float {
-  0% { opacity: 0; transform: translateY(0) scale(1); }
-  20% { opacity: 0.7; }
-  80% { opacity: 0.3; }
-  100% { opacity: 0; transform: translateY(-120px) scale(0.5); }
+@keyframes ember-rise {
+  0%   { opacity: 0; transform: translateY(0)    translateX(0)   scale(1); }
+  15%  { opacity: 0.9; }
+  70%  { opacity: 0.4; transform: translateY(-90px) translateX(8px)  scale(0.7); }
+  100% { opacity: 0; transform: translateY(-140px) translateX(-4px) scale(0.3); }
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 820px; }
+/* ── Contenido ── */
+.hero-content {
+  position: relative; z-index: 3; max-width: 820px;
+  /* Empuja el contenido a la mitad visual, por encima de la catedral */
+  margin-bottom: 60px;
+}
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 0.6rem;
@@ -149,25 +334,22 @@
   font-size: clamp(4.5rem, 12vw, 10rem); font-weight: 900;
   line-height: 0.9; letter-spacing: -0.02em;
   color: var(--flame); text-transform: uppercase;
-  text-shadow: 0 0 60px rgba(232,136,42,0.5), 0 0 120px rgba(212,168,71,0.2);
+  text-shadow: 0 0 60px rgba(232,136,42,0.55), 0 0 120px rgba(212,168,71,0.25), 0 0 200px rgba(232,136,42,0.1);
   margin-bottom: 0.5rem;
   animation: fade-up 1s ease 0.2s both;
 }
-
 .hero-grace {
   font-family: var(--font-serif);
   font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 300; font-style: italic;
   color: var(--gold2); letter-spacing: 0.04em; margin-bottom: 2rem;
   animation: fade-up 1s ease 0.35s both;
 }
-
 .hero-tagline {
   font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
   color: rgba(245,237,216,0.4); margin-bottom: 1.5rem;
   animation: fade-up 1s ease 0.5s both;
 }
 .hero-tagline strong { color: rgba(245,237,216,0.7); font-weight: 500; }
-
 .hero-mission {
   font-family: var(--font-serif);
   font-size: 1.05rem; font-weight: 300; font-style: italic;
@@ -175,13 +357,11 @@
   line-height: 1.8; border: none;
   animation: fade-up 1s ease 0.65s both;
 }
-
 .hero-actions {
   display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
   margin-bottom: 2.5rem;
   animation: fade-up 1s ease 0.8s both;
 }
-
 .btn-flame {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
@@ -190,7 +370,6 @@
   transition: background 0.2s, transform 0.2s;
 }
 .btn-flame:hover { background: var(--gold2); transform: translateY(-1px); }
-
 .btn-ghost {
   display: inline-flex; align-items: center; gap: 0.5rem;
   font-size: 0.72rem; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase;
@@ -200,11 +379,9 @@
 }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
 
-/* Nota QR */
 .hero-qr-note {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--font-serif);
-  font-size: 0.82rem; font-style: italic;
+  font-family: var(--font-serif); font-size: 0.82rem; font-style: italic;
   color: rgba(240,201,106,0.5);
   animation: fade-up 1s ease 1s both;
 }
@@ -214,26 +391,30 @@
 .hero-scroll {
   position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
   animation: scrollbounce 2.2s ease-in-out infinite;
-  opacity: 0.35; text-decoration: none;
+  opacity: 0.35; text-decoration: none; z-index: 3;
 }
-.hero-scroll svg {
-  width: 22px; height: 22px; stroke: var(--gold);
-  fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
-}
+.hero-scroll svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── Keyframes ── */
 @keyframes scrollbounce {
   0%,100% { transform: translateX(-50%) translateY(0); }
   50%      { transform: translateX(-50%) translateY(7px); }
 }
-
-@keyframes fade-in {
-  from { opacity: 0; } to { opacity: 1; }
-}
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+@keyframes fade-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-up  { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; }
+  .hero-divine-light,
+  .hero-rosette,
+  .hero-rays::before,
+  .hero-particles span,
+  .candle .flame { animation: none !important; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 7rem 1.25rem 9rem; }
+  .hero-content { margin-bottom: 40px; }
+  .hero-rosette { width: 100vw; height: 100vw; top: -15%; }
+  .hero-cathedral { height: 200px; }
 }
 </style>
