@@ -2,81 +2,124 @@
 ---
 <section id="contacto" class="section-contacto" aria-labelledby="contacto-title">
   <div class="container">
+
     <div class="reveal">
       <div class="s-label">Contacto</div>
-      <h2 class="s-title" id="contacto-title">¿Quieres que actuemos en tu <em>comunidad</em>?</h2>
+      <h2 class="s-title" id="contacto-title">
+        ¿Quieres que actuemos en tu <em>comunidad</em>?
+      </h2>
     </div>
 
     <div class="contact-grid">
-      <!-- Columna izquierda: info -->
-      <div class="contact-left reveal">
-        <p class="intro">Si tu parroquia, comunidad o encuentro quiere contar con nosotros, escríbenos. Estamos disponibles en toda la Diócesis de Orihuela-Alicante y más allá.</p>
 
-        <div class="c-links">
-          <a href="https://www.instagram.com/kairosmomentodegracia/" target="_blank" rel="noopener noreferrer" class="c-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            <div class="c-link-wrap">
-              <span class="c-link-label">Instagram</span>
-              <span>@kairosmomentodegracia</span>
-            </div>
-          </a>
-          <a href="mailto:kairosmomentodegracia@gmail.com" class="c-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <div class="c-link-wrap">
-              <span class="c-link-label">Email</span>
-              <span>kairosmomentodegracia@gmail.com</span>
-            </div>
-          </a>
-          <a href="https://www.diocesisoa.org" target="_blank" rel="noopener noreferrer" class="c-link">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <div class="c-link-wrap">
-              <span class="c-link-label">Diócesis</span>
-              <span>Orihuela-Alicante · Vicaría de Evangelización</span>
-            </div>
-          </a>
-        </div>
-      </div>
+      <!-- ── Info izquierda ── -->
+      <aside class="contact-info reveal">
+        <p class="intro">
+          Si tu parroquia, comunidad o encuentro quiere contar con nosotros, escríbenos.
+          Estamos disponibles en toda la Diócesis de Orihuela-Alicante y más allá.
+        </p>
+        <ul class="c-links" role="list">
+          <li>
+            <a href="https://www.instagram.com/kairosmomentodegracia/"
+               target="_blank" rel="noopener noreferrer" class="c-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              <div>
+                <span class="c-link-label">Instagram</span>
+                <span class="c-link-value">@kairosmomentodegracia</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:kairosmomentodegracia@gmail.com" class="c-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <div>
+                <span class="c-link-label">Email</span>
+                <span class="c-link-value">kairosmomentodegracia@gmail.com</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.diocesisoa.org" target="_blank" rel="noopener noreferrer" class="c-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <div>
+                <span class="c-link-label">Diócesis</span>
+                <span class="c-link-value">Orihuela-Alicante · Vicaría de Evangelización</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </aside>
 
-      <!-- Columna derecha: formulario -->
-      <div class="form-col reveal delay-1">
+      <!-- ── Formulario derecha ── -->
+      <div class="form-wrapper reveal delay-1">
+
         <form
+          id="kairos-form"
           class="contact-form"
           name="contacto-kairos"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          id="kairos-form"
           novalidate
           aria-label="Formulario de contacto"
         >
           <input type="hidden" name="form-name" value="contacto-kairos" />
-          <div class="honeypot" aria-hidden="true">
-            <label>No rellenar: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          <!-- honeypot -->
+          <div style="display:none" aria-hidden="true">
+            <input name="bot-field" tabindex="-1" autocomplete="off" />
           </div>
 
+          <!-- Fila nombre + email -->
           <div class="form-row">
-            <div class="field-wrap">
-              <label for="nombre">Nombre <span class="req" aria-hidden="true">*</span></label>
-              <input id="nombre" type="text" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
-              <span class="field-error" id="error-nombre">Este campo es obligatorio</span>
+            <div class="field">
+              <label for="f-nombre">
+                Nombre <abbr title="obligatorio" aria-label="obligatorio">*</abbr>
+              </label>
+              <input
+                id="f-nombre" name="nombre" type="text"
+                placeholder="Tu nombre" autocomplete="name" required
+              />
+              <p class="field-msg" id="msg-nombre" role="alert"></p>
             </div>
-            <div class="field-wrap">
-              <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
-              <input id="email" type="email" name="email" placeholder="tu@email.com" required autocomplete="email" />
-              <span class="field-error" id="error-email">Introduce un email válido</span>
+            <div class="field">
+              <label for="f-email">
+                Email <abbr title="obligatorio" aria-label="obligatorio">*</abbr>
+              </label>
+              <input
+                id="f-email" name="email" type="email"
+                placeholder="tu@email.com" autocomplete="email" required
+              />
+              <p class="field-msg" id="msg-email" role="alert"></p>
             </div>
           </div>
 
-          <div class="field-wrap">
-            <label for="parroquia">Parroquia o comunidad</label>
-            <input id="parroquia" type="text" name="parroquia" placeholder="Nombre de tu parroquia o comunidad" autocomplete="organization" />
+          <!-- Parroquia -->
+          <div class="field">
+            <label for="f-parroquia">Parroquia o comunidad</label>
+            <input
+              id="f-parroquia" name="parroquia" type="text"
+              placeholder="Nombre de tu parroquia o comunidad"
+              autocomplete="organization"
+            />
           </div>
 
-          <div class="field-wrap">
-            <label for="evento">Tipo de evento</label>
+          <!-- Tipo de evento -->
+          <div class="field">
+            <label for="f-evento">Tipo de evento</label>
             <div class="select-wrap">
-              <select id="evento" name="evento">
-                <option value="" disabled selected>Selecciona el tipo de evento</option>
+              <select id="f-evento" name="evento">
+                <option value="">Selecciona el tipo de evento</option>
                 <option value="adoracion">Adoración eucarística</option>
                 <option value="concierto">Concierto de música cristiana</option>
                 <option value="parroquial">Celebración parroquial</option>
@@ -84,25 +127,32 @@
                 <option value="retiro">Retiro espiritual</option>
                 <option value="otro">Otro</option>
               </select>
-              <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
             </div>
           </div>
 
-          <div class="field-wrap">
-            <label for="mensaje">Mensaje <span class="req" aria-hidden="true">*</span></label>
+          <!-- Mensaje -->
+          <div class="field">
+            <label for="f-mensaje">
+              Mensaje <abbr title="obligatorio" aria-label="obligatorio">*</abbr>
+            </label>
             <textarea
-              id="mensaje" name="mensaje"
+              id="f-mensaje" name="mensaje"
               placeholder="Cuéntanos sobre tu evento, fechas posibles, lugar…"
-              required rows="5"
+              rows="5" required
             ></textarea>
-            <span class="field-error" id="error-mensaje">Este campo es obligatorio</span>
+            <p class="field-msg" id="msg-mensaje" role="alert"></p>
           </div>
 
-          <div class="form-actions">
-            <p class="form-privacy">Al enviar aceptas que usemos tu email para responderte.</p>
-            <button type="submit" class="btn-submit" id="btn-submit">
-              <span class="btn-text">Enviar solicitud</span>
-              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <!-- Footer del form -->
+          <div class="form-foot">
+            <p class="privacy-note">Al enviar aceptas que usemos tu email para responderte.</p>
+            <button type="submit" id="btn-submit" class="btn-submit">
+              <span id="btn-label">Enviar solicitud</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <line x1="22" y1="2" x2="11" y2="13"/>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"/>
               </svg>
@@ -110,20 +160,23 @@
           </div>
         </form>
 
-        <!-- Mensaje de éxito — completamente fuera del flujo hasta que se necesite -->
-        <div class="form-success" id="form-success" aria-live="polite" aria-atomic="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <!-- Mensaje de éxito — completamente separado del form -->
+        <div id="form-success" class="form-success" aria-live="polite" aria-atomic="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
             <polyline points="22 4 12 14.01 9 11.01"/>
           </svg>
           <p>¡Mensaje enviado! Os contestaremos lo antes posible. Dios os bendiga.</p>
         </div>
-      </div>
-    </div>
-  </div>
+
+      </div><!-- /form-wrapper -->
+    </div><!-- /contact-grid -->
+  </div><!-- /container -->
 </section>
 
 <style>
+/* ── Sección ── */
 .section-contacto {
   padding: 7rem 2rem;
   background: var(--deep);
@@ -136,260 +189,327 @@
   color: var(--flame); margin-bottom: 0.9rem;
   display: flex; align-items: center; gap: 0.7rem;
 }
-.s-label::after { content: ''; display: block; width: 32px; height: 1px; background: var(--flame); opacity: 0.4; }
-
+.s-label::after {
+  content: ''; display: block; width: 32px; height: 1px;
+  background: var(--flame); opacity: 0.4;
+}
 .s-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; line-height: 1.1;
-  color: var(--cream); margin-bottom: 1.5rem;
+  font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 700; line-height: 1.15;
+  color: var(--cream); margin-bottom: 0;
 }
 .s-title em { font-style: italic; color: var(--gold2); font-weight: 400; }
 
-/* Grid */
+/* ── Grid principal ── */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 5rem;
+  grid-template-columns: 5fr 7fr;
+  gap: 4rem;
   margin-top: 3rem;
   align-items: start;
 }
 
-/* Columna izquierda */
-.contact-left p.intro {
-  font-family: var(--font-serif); font-size: 1.05rem; font-style: italic; font-weight: 300;
+/* ── Info izquierda ── */
+.contact-info p.intro {
+  font-family: var(--font-serif);
+  font-size: 1rem; font-style: italic; font-weight: 300;
   color: rgba(245,237,216,0.5); line-height: 1.8; margin-bottom: 2rem;
 }
-.c-links { display: flex; flex-direction: column; gap: 0.75rem; }
+.c-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
 .c-link {
-  display: flex; align-items: center; gap: 1rem; padding: 0.95rem 1.3rem;
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.95rem 1.2rem;
   border: 1px solid rgba(255,255,255,0.06); border-radius: 3px;
-  background: rgba(255,255,255,0.02); text-decoration: none;
-  color: rgba(245,237,216,0.55); font-size: 0.88rem; transition: all 0.2s;
+  background: rgba(255,255,255,0.02);
+  text-decoration: none; color: rgba(245,237,216,0.55);
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
 }
-.c-link:hover { color: var(--gold2); border-color: var(--bg-gold); background: rgba(212,168,71,0.04); }
+.c-link:hover {
+  color: var(--gold2); border-color: var(--bg-gold);
+  background: rgba(212,168,71,0.04);
+}
 .c-link svg {
-  width: 18px; height: 18px; stroke: var(--flame); fill: none;
-  stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0;
+  width: 18px; height: 18px; flex-shrink: 0;
+  stroke: var(--flame); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
 }
-.c-link-wrap { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
+.c-link > div { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
 .c-link-label {
-  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--flame);
+  font-size: 0.63rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--flame); line-height: 1;
+}
+.c-link-value {
+  font-size: 0.85rem;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 
-/* Columna derecha */
-.form-col { display: flex; flex-direction: column; gap: 0; }
+/* ── Formulario ── */
+.form-wrapper { display: flex; flex-direction: column; }
 
-/* Honeypot */
-.honeypot { display: none; }
-
-/* Formulario */
 .contact-form {
-  display: flex; flex-direction: column; gap: 1rem;
+  display: flex; flex-direction: column; gap: 1.1rem;
 }
 
+/* Fila doble */
 .form-row {
   display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
 }
 
-.field-wrap {
+/* Campo individual */
+.field {
   display: flex; flex-direction: column; gap: 0.4rem;
-  position: relative;
 }
-.field-wrap label {
-  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(245,237,216,0.35);
+.field label {
+  font-size: 0.67rem; font-weight: 500; letter-spacing: 0.11em; text-transform: uppercase;
+  color: rgba(245,237,216,0.35); line-height: 1;
 }
-.req { color: var(--flame); margin-left: 2px; }
+.field label abbr {
+  text-decoration: none; color: var(--flame); margin-left: 2px;
+}
 
-.contact-form input,
-.contact-form select,
+/* Inputs y textarea */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
 .contact-form textarea {
   width: 100%;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.09);
   border-radius: 3px;
-  padding: 0.85rem 1.1rem;
+  padding: 0.82rem 1rem;
   font-family: var(--font-body); font-size: 0.88rem;
   color: rgba(245,237,216,0.85);
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
   line-height: 1.5;
+  box-sizing: border-box;
 }
 .contact-form input::placeholder,
-.contact-form textarea::placeholder { color: rgba(245,237,216,0.2); }
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: rgba(232,136,42,0.5);
-  box-shadow: 0 0 0 3px rgba(232,136,42,0.08);
+.contact-form textarea::placeholder {
+  color: rgba(245,237,216,0.2);
 }
-.contact-form input.is-error,
-.contact-form select.is-error,
-.contact-form textarea.is-error {
-  border-color: #c45a5a;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(232,136,42,0.55);
+  box-shadow: 0 0 0 3px rgba(232,136,42,0.07);
+}
+.contact-form input.invalid,
+.contact-form textarea.invalid {
+  border-color: #b05050;
+  box-shadow: none;
 }
 .contact-form textarea {
-  resize: vertical;
-  min-height: 130px;
+  resize: vertical; min-height: 130px;
 }
 
-/* Select personalizado */
-.select-wrap {
-  position: relative;
-}
+/* Select */
+.select-wrap { position: relative; }
 .select-wrap select {
+  width: 100%;
   appearance: none; -webkit-appearance: none;
-  cursor: pointer;
-  padding-right: 2.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 3px;
+  padding: 0.82rem 2.5rem 0.82rem 1rem;
+  font-family: var(--font-body); font-size: 0.88rem;
+  color: rgba(245,237,216,0.85);
+  outline: none; cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
 }
-.select-wrap select option { background: var(--deep2); color: var(--cream); }
-.select-arrow {
-  position: absolute; right: 0.9rem; top: 50%; transform: translateY(-50%);
-  width: 16px; height: 16px;
-  stroke: rgba(212,168,71,0.45); pointer-events: none;
+.select-wrap select:focus {
+  border-color: rgba(232,136,42,0.55);
+  box-shadow: 0 0 0 3px rgba(232,136,42,0.07);
+}
+.select-wrap select option { background: #1a1610; color: #f5edd8; }
+.chevron {
+  position: absolute; right: 0.85rem; top: 50%; transform: translateY(-50%);
+  width: 15px; height: 15px;
+  stroke: rgba(212,168,71,0.45); fill: none; stroke-width: 2;
+  pointer-events: none;
 }
 
-/* Mensajes de error por campo */
-.field-error {
-  font-size: 0.72rem; color: #e07070;
+/* Mensaje de error por campo */
+.field-msg {
+  font-size: 0.72rem;
+  color: #e08080;
+  min-height: 0;         /* no reserva espacio */
+  margin: 0; padding: 0;
+  /* Oculto por defecto — visible solo cuando tiene texto */
   display: none;
 }
-.field-wrap.has-error .field-error { display: block; }
-.field-wrap.has-error input,
-.field-wrap.has-error textarea { border-color: #c45a5a; }
+.field-msg:not(:empty) { display: block; }
 
-/* Acciones del form */
-.form-actions {
+/* Pie del formulario */
+.form-foot {
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem; flex-wrap: wrap;
-  margin-top: 0.25rem;
+  padding-top: 0.25rem;
 }
-.form-privacy {
-  font-size: 0.72rem; color: rgba(245,237,216,0.2);
-  flex: 1; min-width: 0;
+.privacy-note {
+  font-size: 0.7rem; color: rgba(245,237,216,0.2);
+  flex: 1 1 auto; margin: 0; line-height: 1.4;
 }
 .btn-submit {
-  display: inline-flex; align-items: center; gap: 0.55rem; flex-shrink: 0;
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 0.55rem;
   font-family: var(--font-body); font-size: 0.72rem; font-weight: 500;
   letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--deep); background: var(--flame); border: none; border-radius: 2px;
-  padding: 0.9rem 2rem; cursor: pointer;
-  transition: background 0.2s, transform 0.2s, opacity 0.2s;
+  color: var(--deep); background: var(--flame);
+  border: none; border-radius: 2px;
+  padding: 0.9rem 1.8rem; cursor: pointer;
+  transition: background 0.2s, transform 0.15s, opacity 0.2s;
 }
 .btn-submit:hover { background: var(--gold2); transform: translateY(-1px); }
-.btn-submit:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
-/* Mensaje de éxito — oculto por defecto */
+/* ── Mensaje de éxito ── */
 .form-success {
-  display: none;                         /* oculto hasta que JS lo active */
-  align-items: flex-start; gap: 1rem;
-  padding: 1.2rem 1.5rem;
-  border-radius: 3px;
-  background: rgba(50,110,60,0.18);
-  border: 1px solid rgba(80,160,90,0.35);
-  color: #8de0a0;
-  margin-top: 1rem;
+  display: none;                  /* oculto hasta JS */
+  flex-direction: column;
+  align-items: flex-start; gap: 0.75rem;
+  padding: 1.4rem 1.6rem;
+  background: rgba(40,90,50,0.2);
+  border: 1px solid rgba(70,150,80,0.35);
+  border-radius: 4px;
+  margin-top: 0;
 }
-.form-success.visible {
-  display: flex;
-}
+.form-success.visible { display: flex; }  /* JS añade .visible */
+.form-success svg { stroke: #7ed89a; flex-shrink: 0; }
 .form-success p {
-  font-size: 0.9rem; line-height: 1.6;
-  color: #8de0a0;
+  font-family: var(--font-serif);
+  font-size: 1rem; font-style: italic; line-height: 1.6;
+  color: #9ee8b2; margin: 0;
 }
-.form-success svg { stroke: #8de0a0; flex-shrink: 0; margin-top: 2px; }
 
-/* Reveal */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* ── Reveal ── */
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
 .delay-1 { transition-delay: 0.12s; }
 
-@media (max-width: 900px) {
-  .section-contacto { padding: 4.5rem 1.5rem; }
-  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .form-row { grid-template-columns: 1fr; }
-  .form-actions { flex-direction: column; align-items: stretch; }
-  .btn-submit { justify-content: center; }
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 600px) {
+  .section-contacto { padding: 4rem 1.25rem; }
+  .form-row { grid-template-columns: 1fr; gap: 1.1rem; }
+  .form-foot { flex-direction: column; align-items: stretch; }
+  .btn-submit { justify-content: center; width: 100%; }
+  .c-link-value { white-space: normal; }
 }
 </style>
 
 <script>
-const form = document.getElementById('kairos-form') as HTMLFormElement | null;
-const successEl = document.getElementById('form-success')!;
-const submitBtn = document.getElementById('btn-submit') as HTMLButtonElement;
+(function () {
+  const form   = document.getElementById('kairos-form')   as HTMLFormElement | null;
+  const btn    = document.getElementById('btn-submit')    as HTMLButtonElement | null;
+  const label  = document.getElementById('btn-label')     as HTMLElement | null;
+  const banner = document.getElementById('form-success')  as HTMLElement | null;
 
-if (!form) throw new Error('Form not found');
+  if (!form || !btn || !label || !banner) return;
 
-// Valida un campo individual
-function validateField(input: HTMLInputElement | HTMLTextAreaElement): boolean {
-  const wrap = input.closest('.field-wrap') as HTMLElement | null;
-  if (!wrap) return true;
-  let ok = true;
-  if (input.hasAttribute('required') && !input.value.trim()) {
-    ok = false;
-  } else if (input.type === 'email' && input.value.trim()) {
-    ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+  /* ── Helpers ── */
+  const getField  = (id: string) => document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | null;
+  const getMsg    = (id: string) => document.getElementById(id) as HTMLElement | null;
+
+  function setError(inputId: string, msgId: string, text: string) {
+    const inp = getField(inputId);
+    const msg = getMsg(msgId);
+    if (inp) inp.classList.add('invalid');
+    if (msg) msg.textContent = text;
   }
-  wrap.classList.toggle('has-error', !ok);
-  return ok;
-}
+  function clearError(inputId: string, msgId?: string) {
+    const inp = getField(inputId);
+    const msg = msgId ? getMsg(msgId) : null;
+    if (inp) inp.classList.remove('invalid');
+    if (msg) msg.textContent = '';
+  }
 
-// Quitar error al escribir
-form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input, textarea').forEach(el => {
-  el.addEventListener('input', () => {
-    const wrap = el.closest('.field-wrap') as HTMLElement | null;
-    wrap?.classList.remove('has-error');
+  /* Limpiar error al escribir (solo los que tienen msg) */
+  [
+    ['f-nombre', 'msg-nombre'],
+    ['f-email',  'msg-email'],
+    ['f-mensaje','msg-mensaje'],
+  ].forEach(([inputId, msgId]) => {
+    getField(inputId)?.addEventListener('input', () => clearError(inputId, msgId));
   });
-});
 
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+  /* ── Validación al enviar ── */
+  function validate(): boolean {
+    let ok = true;
 
-  // Validar todos los campos requeridos
-  const fields = Array.from(form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input:not([name="bot-field"]), textarea'));
-  const allValid = fields.map(validateField).every(Boolean);
-  if (!allValid) {
-    // Enfocar el primer campo con error
-    const firstError = form.querySelector<HTMLElement>('.has-error input, .has-error textarea');
-    firstError?.focus();
-    return;
-  }
-
-  // Enviar
-  submitBtn.disabled = true;
-  const btnText = submitBtn.querySelector('.btn-text')!;
-  btnText.textContent = 'Enviando…';
-
-  try {
-    const data = new FormData(form);
-    const body = new URLSearchParams();
-    data.forEach((value, key) => body.append(key, value as string));
-
-    const res = await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body.toString(),
-    });
-
-    if (res.ok) {
-      form.reset();
-      form.style.display = 'none';
-      successEl.classList.add('visible');
+    const nombre = getField('f-nombre');
+    if (!nombre?.value.trim()) {
+      setError('f-nombre', 'msg-nombre', 'Este campo es obligatorio');
+      ok = false;
     } else {
-      throw new Error('server error');
+      clearError('f-nombre', 'msg-nombre');
     }
-  } catch {
-    // Fallback: mailto
-    const nombre = (form.querySelector<HTMLInputElement>('[name="nombre"]')?.value ?? '').trim();
-    const emailVal = (form.querySelector<HTMLInputElement>('[name="email"]')?.value ?? '').trim();
-    const mensajeVal = (form.querySelector<HTMLTextAreaElement>('[name="mensaje"]')?.value ?? '').trim();
-    window.location.href =
-      `mailto:kairosmomentodegracia@gmail.com` +
-      `?subject=${encodeURIComponent('Solicitud de actuación - ' + nombre)}` +
-      `&body=${encodeURIComponent(mensajeVal + '\n\nContacto: ' + emailVal)}`;
-    btnText.textContent = 'Enviar solicitud';
-    submitBtn.disabled = false;
+
+    const email = getField('f-email');
+    const emailVal = email?.value.trim() ?? '';
+    if (!emailVal) {
+      setError('f-email', 'msg-email', 'Este campo es obligatorio');
+      ok = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      setError('f-email', 'msg-email', 'Introduce un email válido');
+      ok = false;
+    } else {
+      clearError('f-email', 'msg-email');
+    }
+
+    const mensaje = getField('f-mensaje');
+    if (!mensaje?.value.trim()) {
+      setError('f-mensaje', 'msg-mensaje', 'Este campo es obligatorio');
+      ok = false;
+    } else {
+      clearError('f-mensaje', 'msg-mensaje');
+    }
+
+    return ok;
   }
-});
+
+  /* ── Envío ── */
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validate()) {
+      // Enfocar primer campo inválido
+      (form.querySelector('.invalid') as HTMLElement | null)?.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    label.textContent = 'Enviando…';
+
+    try {
+      const body = new URLSearchParams(new FormData(form) as any).toString();
+      const res  = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        banner.classList.add('visible');
+        banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        throw new Error('server');
+      }
+    } catch {
+      // Fallback mailto
+      const n = (getField('f-nombre') as HTMLInputElement)?.value ?? '';
+      const m = (getField('f-mensaje') as HTMLTextAreaElement)?.value ?? '';
+      const em = (getField('f-email')  as HTMLInputElement)?.value ?? '';
+      window.location.href =
+        'mailto:kairosmomentodegracia@gmail.com' +
+        '?subject=' + encodeURIComponent('Solicitud de actuación – ' + n) +
+        '&body='    + encodeURIComponent(m + '\n\nEmail: ' + em);
+      label.textContent = 'Enviar solicitud';
+      btn.disabled = false;
+    }
+  });
+})();
 </script>
